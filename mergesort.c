@@ -2,6 +2,7 @@
 
 # include <stdio.h>
 # include <math.h>
+# include <sys/time.h>
 
 void mergeSort(int *,int,int,int);
 
@@ -24,9 +25,14 @@ int main() {
 
     media = (n - 1)/2;
 
-        
+    struct timeval start, stop;
+
+    gettimeofday(&start, NULL); 
     mergeSort(array,0,media,n);
-    
+    gettimeofday(&stop, NULL);
+
+    printf("Tempo de execução da ordenação: %lu ms\n", stop.tv_usec - start.tv_usec);
+
     return 0;
 }
 

@@ -2,6 +2,7 @@
 
 # include <stdio.h>
 # include <stdlib.h>
+# include <sys/time.h>
 
 void bubbleSort(int *, int);
 
@@ -17,7 +18,12 @@ int main() {
     for (i = 0; i < n; i++)
         scanf("%d", &sequencia[i]);
     
+    struct timeval start, stop;
+    gettimeofday(&start, NULL);
     bubbleSort(sequencia, n);
+    gettimeofday(&stop, NULL);
+
+    printf("Tempo de execução da ordenação: %lu ms\n", stop.tv_usec - start.tv_usec);
 
     return 0;
 }
