@@ -25,20 +25,23 @@ int main(void) {
   int ar[numeros];
   
   for(int i = 0; i < numeros; i++){
-    scanf("%d", &ar[i]);
+    //scanf("%d", &ar[i]);
+    ar[i] = rand();
   }
   
   struct timeval stop, start;
   gettimeofday(&start, NULL);
   insertionSort(ar, numeros);
   gettimeofday(&stop, NULL);
-  printf("O tempo de execução para a ordenação foi de: %lu milissegundos\n", stop.tv_usec - start.tv_usec);
+  
   printf("[");
   for(int i = 0; i < numeros; i++){
     if(i == 0) printf("%d", ar[i]);
     else printf(" %d", ar[i]);
     if(i!=numeros - 1) printf(",");
   }
-  printf("]");
+  printf("]\n\n");
+  printf("\n");
+  printf("O tempo de execução para a ordenação foi de: %lu microsegundos\n", stop.tv_usec - start.tv_usec);
   return 0;
 }

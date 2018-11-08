@@ -15,10 +15,11 @@ int main() {
 
     int array[n];
 
-    printf("Digite a sequência: ");
+    //printf("Digite a sequência: ");
 
     for (m = 0; m < n; m++) {
-        scanf("%d", &array[m]);
+        //scanf("%d", &array[m]);
+        array[m] = rand();
     }
 
     printf("\n");
@@ -31,7 +32,7 @@ int main() {
     mergeSort(array,0,media,n);
     gettimeofday(&stop, NULL);
 
-    printf("Tempo de execução da ordenação: %lu ms\n", stop.tv_usec - start.tv_usec);
+    printf("Tempo de execução da ordenação: %lu us\n", stop.tv_usec - start.tv_usec);
 
     return 0;
 }

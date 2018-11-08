@@ -13,17 +13,21 @@ int main() {
 
     int sequencia[n];
 
-    printf("Digite os elementos da sequência: ");
+    //printf("Digite os elementos da sequência: ");
 
     for (i = 0; i < n; i++)
-        scanf("%d", &sequencia[i]);
+        //scanf("%d", &sequencia[i]);
+        sequencia[i] = rand();
     
     struct timeval start, stop;
     gettimeofday(&start, NULL);
     bubbleSort(sequencia, n);
     gettimeofday(&stop, NULL);
 
-    printf("Tempo de execução da ordenação: %lu ms\n", stop.tv_usec - start.tv_usec);
+    printf("\n");
+    int u = stop.tv_usec - start.tv_usec;
+    printf("%d %d\n", start.tv_usec, stop.tv_usec);
+    printf("Tempo de execução da ordenação: %d us\n", u);
 
     return 0;
 }
