@@ -1,5 +1,4 @@
 //QuickSort com pivo no final
-
 #include <stdio.h>
 #include <stdlib.h> 
 #include <sys/time.h> 
