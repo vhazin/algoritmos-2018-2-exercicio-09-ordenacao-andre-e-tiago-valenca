@@ -1,4 +1,4 @@
-//QuickSort com pivo no final
+//QuickSort com pivô no final
 #include <stdio.h>
 #include <stdlib.h> 
 #include <sys/time.h> 
